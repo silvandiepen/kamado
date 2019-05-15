@@ -1,0 +1,27 @@
+// Basics
+@import 'tools/pre';
+@import 'typography/embed';
+
+// Define output settings for project
+$output: set-output(css, true);
+
+// Output the whole framework
+@import '~@henris/next';
+
+// Defined settings
+@import 'tools/post';
+
+// Theme
+@import 'typography/typography';
+@import 'components/index';
+
+@each $color-name, $color-value in $colors{
+	.background--#{to-lower-case($color-name)}{
+		background-color: $color-value;
+		color: white;
+	}
+}
+html,body{
+	background-color:color(Black);
+	color: white;
+}
